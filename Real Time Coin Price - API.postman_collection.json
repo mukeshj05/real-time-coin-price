@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "9802da3d-ac16-4596-9b41-70a87ef2c0a2",
+		"name": "Real Time Coin Price - API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19257063"
+	},
+	"item": [
+		{
+			"name": "Get Coin Price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/coin-price",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"coin-price"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Case",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/coin-price",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"coin-price"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2433"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"981-2Y7nX1fbLNq1Y3tctkVS0tWxX2c\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Aug 2022 11:07:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Coin price fetched at Wed Aug 24 2022 16:37:38 GMT+0530 (India Standard Time)\",\n    \"data\": {\n        \"action\": \"fetch\",\n        \"message\": \"Coin price fetched at Wed Aug 24 2022 16:37:38 GMT+0530 (India Standard Time)\",\n        \"data\": {\n            \"BTCUSDT\": {\n                \"symbol\": \"BTCUSDT\",\n                \"priceChange\": \"-85.07000000\",\n                \"priceChangePercent\": \"-0.398\",\n                \"weightedAvgPrice\": \"21427.37044034\",\n                \"prevClosePrice\": \"21383.50000000\",\n                \"lastPrice\": \"21298.87000000\",\n                \"lastQty\": \"0.01170000\",\n                \"bidPrice\": \"21298.83000000\",\n                \"bidQty\": \"0.00585000\",\n                \"askPrice\": \"21299.84000000\",\n                \"askQty\": \"0.04202000\",\n                \"openPrice\": \"21383.94000000\",\n                \"highPrice\": \"21684.87000000\",\n                \"lowPrice\": \"21145.00000000\",\n                \"volume\": \"185004.58122000\",\n                \"quoteVolume\": \"3964161694.96017850\",\n                \"openTime\": 1661252858303,\n                \"closeTime\": 1661339258303,\n                \"firstId\": 1684475705,\n                \"lastId\": 1690262946,\n                \"count\": 5787242\n            },\n            \"ETHUSDT\": {\n                \"symbol\": \"ETHUSDT\",\n                \"priceChange\": \"28.05000000\",\n                \"priceChangePercent\": \"1.749\",\n                \"weightedAvgPrice\": \"1635.96758776\",\n                \"prevClosePrice\": \"1603.86000000\",\n                \"lastPrice\": \"1631.90000000\",\n                \"lastQty\": \"0.67670000\",\n                \"bidPrice\": \"1631.89000000\",\n                \"bidQty\": \"13.17460000\",\n                \"askPrice\": \"1631.90000000\",\n                \"askQty\": \"35.37370000\",\n                \"openPrice\": \"1603.85000000\",\n                \"highPrice\": \"1676.07000000\",\n                \"lowPrice\": \"1599.54000000\",\n                \"volume\": \"893501.55760000\",\n                \"quoteVolume\": \"1461739587.84286700\",\n                \"openTime\": 1661252858237,\n                \"closeTime\": 1661339258237,\n                \"firstId\": 942333323,\n                \"lastId\": 943491085,\n                \"count\": 1157763\n            },\n            \"ENJUSDT\": {\n                \"symbol\": \"ENJUSDT\",\n                \"priceChange\": \"0.00600000\",\n                \"priceChangePercent\": \"1.081\",\n                \"weightedAvgPrice\": \"0.56177857\",\n                \"prevClosePrice\": \"0.55400000\",\n                \"lastPrice\": \"0.56100000\",\n                \"lastQty\": \"225.60000000\",\n                \"bidPrice\": \"0.56100000\",\n                \"bidQty\": \"91899.80000000\",\n                \"askPrice\": \"0.56200000\",\n                \"askQty\": \"7503.90000000\",\n                \"openPrice\": \"0.55500000\",\n                \"highPrice\": \"0.57300000\",\n                \"lowPrice\": \"0.55200000\",\n                \"volume\": \"4333594.90000000\",\n                \"quoteVolume\": \"2434520.73100000\",\n                \"openTime\": 1661252858176,\n                \"closeTime\": 1661339258176,\n                \"firstId\": 79458834,\n                \"lastId\": 79470659,\n                \"count\": 11826\n            },\n            \"GRTUSDT\": {\n                \"symbol\": \"GRTUSDT\",\n                \"priceChange\": \"0.00480000\",\n                \"priceChangePercent\": \"4.364\",\n                \"weightedAvgPrice\": \"0.11240661\",\n                \"prevClosePrice\": \"0.11000000\",\n                \"lastPrice\": \"0.11480000\",\n                \"lastQty\": \"10197.00000000\",\n                \"bidPrice\": \"0.11470000\",\n                \"bidQty\": \"134651.00000000\",\n                \"askPrice\": \"0.11480000\",\n                \"askQty\": \"7109.00000000\",\n                \"openPrice\": \"0.11000000\",\n                \"highPrice\": \"0.11620000\",\n                \"lowPrice\": \"0.10940000\",\n                \"volume\": \"64407705.00000000\",\n                \"quoteVolume\": \"7239851.83980000\",\n                \"openTime\": 1661252857345,\n                \"closeTime\": 1661339257345,\n                \"firstId\": 89521040,\n                \"lastId\": 89551913,\n                \"count\": 30874\n            }\n        }\n    }\n}"
+				},
+				{
+					"name": "Error - Binance API issue",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/coin-price",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"coin-price"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "625"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"271-2OInbY96YE8s2IJY+VbJcUDRSsM\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Aug 2022 11:15:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Request failed with status code 400\",\n    \"data\": {\n        \"message\": \"Request failed with status code 400\",\n        \"name\": \"AxiosError\",\n        \"config\": {\n            \"transitional\": {\n                \"silentJSONParsing\": true,\n                \"forcedJSONParsing\": true,\n                \"clarifyTimeoutError\": false\n            },\n            \"transformRequest\": [\n                null\n            ],\n            \"transformResponse\": [\n                null\n            ],\n            \"timeout\": 0,\n            \"xsrfCookieName\": \"XSRF-TOKEN\",\n            \"xsrfHeaderName\": \"X-XSRF-TOKEN\",\n            \"maxContentLength\": -1,\n            \"maxBodyLength\": -1,\n            \"env\": {},\n            \"headers\": {\n                \"Accept\": \"application/json, text/plain, */*\",\n                \"User-Agent\": \"axios/0.27.2\"\n            },\n            \"method\": \"get\",\n            \"url\": \"https://api.binance.com/api/v3/ticker/24hr?symbols=[]\"\n        },\n        \"code\": \"ERR_BAD_REQUEST\",\n        \"status\": 400\n    }\n}"
+				},
+				{
+					"name": "Error - No data received from Binance",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/coin-price",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"coin-price"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "107"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6b-1/CslYvByVlxPfwGgoRp3eabmbM\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Aug 2022 11:17:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"No data found\",\n    \"data\": {\n        \"action\": \"fetch\",\n        \"message\": \"No data found\",\n        \"data\": null\n    }\n}"
+				}
+			]
+		}
+	]
+}
