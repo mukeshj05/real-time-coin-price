@@ -1,38 +1,49 @@
 const { default: axios } = require("axios")
 const { getIO } = require("../socket")
 
+let intervelId
+
 const getCoinPrice = async(req, res, next) => {
-    let coinPriceOutput
+    // let coinPriceOutput
 
     try {
-        const binanceRes = await axios.get('https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","ENJUSDT","GRTUSDT"]')
-
-        if (!!binanceRes && !!binanceRes.data && binanceRes.data.length > 0) {
-            const coinPriceObject = {}
-
-            binanceRes.data.forEach(el => {
-                if (!coinPriceObject[el.symbol]) {
-                    coinPriceObject[el.symbol] = el
+        const binanceData = async() => {
+            try {
+                const binanceRes = await axios.get('https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","ENJUSDT","GRTUSDT"]')
+        
+                if (!!binanceRes && !!binanceRes.data && binanceRes.data.length > 0) {
+                    const coinPriceObject = {}
+        
+                    binanceRes.data.forEach(el => {
+                        if (!coinPriceObject[el.symbol]) {
+                            coinPriceObject[el.symbol] = el
+                        }
+                    })
+        
+                    const coinPriceOutput = { action: 'fetch', message: `Coin price fetched at ${new Date}`, data: coinPriceObject }
+                    return coinPriceOutput
+                } else {
+                    const coinPriceOutput = { action: 'fetch', message: 'No data found', data: null }
+                    return coinPriceOutput
                 }
-            })
-
-            coinPriceOutput = { action: 'fetch', message: `Coin price fetched at ${new Date}`, data: coinPriceObject }
-
-            const io = getIO()
-    
-            if (io) {
-                setInterval(() => {
-                    io.emit('coin-price', coinPriceOutput)
-                }, 5000)
+            } catch (err) {
+                const coinPriceOutput = { action: 'fetch', message: err.message, data: null }
+                return coinPriceOutput
             }
-        } else {
-            coinPriceOutput = { action: 'fetch', message: 'No data found', data: null }
+        }
+        const io = getIO()
+
+        if (io && !intervelId) {
+            io.emit('coin-price', await binanceData())
+            intervelId = setInterval(async () => {
+                io.emit('coin-price', await binanceData())
+            }, 5000)
         }
 
         return res.status(200).json({
-            success: coinPriceOutput.data ? true : false,
-            message: coinPriceOutput.message,
-            data: coinPriceOutput
+            success: io ? true : false,
+            message: io ? 'Connected': 'Unable to connect',
+            data: null
         })
     } catch (err) {
         next (err)
